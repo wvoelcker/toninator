@@ -9,5 +9,5 @@ Enter [vowel]/ for an upwards tone mark, [vowel]\ for a downwards tone mark, [vo
 
 Type in the left hand box; rendered text appears in the right-hand one
 
-
+Hosted online at http://toninator.willv.net
 

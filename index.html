@@ -10,7 +10,7 @@
 	#main { width:100% }
 	#input, #output { width:50%; height:300px; padding:10px; }
 	#inputarea, #outputarea { width:100%; height:100%; background-color:white; color:black; }
-	pre { margin:0; }
+	#macro { margin:0 20px; padding:20px; border:1px dashed black; display:none; }
 </style>
 
 <script type="text/javascript">
@@ -77,6 +77,26 @@ onload = function() {
 </table>
 
 <p>by <a href="http://willv.net">Will Voelcker</a></p>
+
+<p>Also available as a macro for Openoffice and Libreoffice.  <a href="javascript:void(0)" onclick="document.getElementById('macro').style.display = 'block'">See the macro.</a></p>
+
+<blockquote id='macro'>
+Sub Toninator<br />
+oDoc = thisComponent<br />
+aFind = Array("a\/", "e\/", "i\/", "o\/", "u\/", "a\", "e\", "i\", "o\", "u\", "a/", "e/", "i/", "o/", "u/", "a_", "e_", "i_", "o_", "u_")<br />
+aReplace = Array("ă", "ĕ", "ĭ", "ŏ", "ŭ", "à", "è", "ì", "ò", "ù", "á", "é", "í", "ó", "ú", "ā", "ē", "ī", "ō", "ū")<br />
+aRayCount = 0<br />
+FandR = oDoc.createReplaceDescriptor<br />
+FandR.SearchCaseSensitive = true<br />
+FandR.SearchRegularExpression = false<br />
+While aRayCount &lt;= uBound(aFind)<br />
+FandR.setSearchString(aFind(aRayCount))<br />
+FandR.setReplaceString(aReplace(aRayCount))<br />
+aRayCount = aRayCount + 1<br />
+oDoc.ReplaceAll(FandR)<br />
+Wend<br />
+End Sub<br />
+</blockquote>
 
 </body>
 

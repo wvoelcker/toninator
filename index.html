@@ -18,31 +18,31 @@
 onload = function() {
 
 	var replacements = {
+		"u\"":"ü",
 		"a\/":"á",
 		"e\/":"é",
 		"i\/":"í",
 		"o\/":"ó",
 		"u\/":"ú",
+		"u\"\/":"ǘ",
 		"a\\":"à",
 		"e\\":"è",
 		"i\\":"ì",
 		"o\\":"ò",
 		"u\\":"ù",
+		"u\"\\":"ǜ",
 		"a\\\/":"ă",
 		"e\\\/":"ĕ",
 		"i\\\/":"ĭ",
 		"o\\\/":"ŏ",
 		"u\\\/":"ŭ",
-		"a/":"á",
-		"e/":"é",
-		"i/":"í",
-		"o/":"ó",
-		"u/":"ú",
+		"u\"\\\/":"ǚ",
 		"a_":"ā",
 		"e_":"ē",
 		"i_":"ī",
 		"o_":"ō",
-		"u_":"ū"
+		"u_":"ū",
+		"u\"_":"ǖ"
 	}
 
 	var inputarea = document.getElementById("inputarea");
@@ -50,7 +50,10 @@ onload = function() {
 
 	inputarea.onkeyup = function() {
 
-		outputarea.value = inputarea.value.replace(/[aeiou](\\\/|[\\\/_])/g, function(match) {
+		outputarea.value = inputarea.value.replace(/[aeiou]"?(\\\/|[\\\/_])/g, function(match) {
+			if (typeof replacements[match] == "undefined") {
+				return match;
+			}
 			return replacements[match];
 		});
 	}
@@ -66,6 +69,8 @@ onload = function() {
 <p>This can be used to quickly generate text with tone-marks</p>
 
 <p>Enter [vowel]/ for an upwards tone mark, [vowel]\ for a downwards tone mark, [vowel]\/ for a downwards-upwards tone mark, and [vowel]_ for a flat tone mark</p>
+
+<p>For example, a/ will produce á.  You can also use u&quot; to generate ü and add any of the above suffixes to add tone marks to ü.</p>
 
 <p>Type in the left hand box; rendered text appears in the right-hand one</p>
 
@@ -83,8 +88,8 @@ onload = function() {
 <blockquote id='macro'>
 Sub Toninator<br />
 oDoc = thisComponent<br />
-aFind = Array("a\/", "e\/", "i\/", "o\/", "u\/", "a\", "e\", "i\", "o\", "u\", "a/", "e/", "i/", "o/", "u/", "a_", "e_", "i_", "o_", "u_")<br />
-aReplace = Array("ă", "ĕ", "ĭ", "ŏ", "ŭ", "à", "è", "ì", "ò", "ù", "á", "é", "í", "ó", "ú", "ā", "ē", "ī", "ō", "ū")<br />
+aFind = Array("u\"", "a\/", "e\/", "i\/", "o\/", "u\/", "u\"\/", "a\", "e\", "i\", "o\", "u\", "u\"\", "a/", "e/", "i/", "o/", "u/", "u\"/", "a_", "e_", "i_", "o_", "u_", "u\"_")<br />
+aReplace = Array("ü", "ă", "ĕ", "ĭ", "ŏ", "ŭ", "ǚ", "à", "è", "ì", "ò", "ù", "ǜ", "á", "é", "í", "ó", "ú", "ǘ", "ā", "ē", "ī", "ō", "ū", "ǖ")<br />
 aRayCount = 0<br />
 FandR = oDoc.createReplaceDescriptor<br />
 FandR.SearchCaseSensitive = true<br />

@@ -86,10 +86,10 @@ onload = function() {
 <p>Also available as a macro for Openoffice and Libreoffice.  <a href="javascript:void(0)" onclick="document.getElementById('macro').style.display = 'block'">See the macro.</a></p>
 
 <blockquote id='macro'>
-Sub Toninator<br />
+Sub PinyinToneMarks<br />
 oDoc = thisComponent<br />
-aFind = Array("u\"", "a\/", "e\/", "i\/", "o\/", "u\/", "u\"\/", "a\", "e\", "i\", "o\", "u\", "u\"\", "a/", "e/", "i/", "o/", "u/", "u\"/", "a_", "e_", "i_", "o_", "u_", "u\"_")<br />
-aReplace = Array("ü", "ă", "ĕ", "ĭ", "ŏ", "ŭ", "ǚ", "à", "è", "ì", "ò", "ù", "ǜ", "á", "é", "í", "ó", "ú", "ǘ", "ā", "ē", "ī", "ō", "ū", "ǖ")<br />
+aFind = Array(&quot;u&quot;&quot;&quot;, &quot;a\/&quot;, &quot;e\/&quot;, &quot;i\/&quot;, &quot;o\/&quot;, &quot;u\/&quot;, &quot;u&quot;&quot;\/&quot;, &quot;a\&quot;, &quot;e\&quot;, &quot;i\&quot;, &quot;o\&quot;, &quot;u\&quot;, &quot;u&quot;&quot;\&quot;, &quot;a/&quot;, &quot;e/&quot;, &quot;i/&quot;, &quot;o/&quot;, &quot;u/&quot;, &quot;u&quot;&quot;/&quot;, &quot;a_&quot;, &quot;e_&quot;, &quot;i_&quot;, &quot;o_&quot;, &quot;u_&quot;, &quot;ǖ&quot;)<br />
+aReplace = Array(&quot;ü&quot;, &quot;ă&quot;, &quot;ĕ&quot;, &quot;ĭ&quot;, &quot;ŏ&quot;, &quot;ŭ&quot;, &quot;ǚ&quot;, &quot;à&quot;, &quot;è&quot;, &quot;ì&quot;, &quot;ò&quot;, &quot;ù&quot;, &quot;ǜ&quot;, &quot;á&quot;, &quot;é&quot;, &quot;í&quot;, &quot;ó&quot;, &quot;ú&quot;, &quot;ú&quot;, &quot;ā&quot;, &quot;ē&quot;, &quot;ī&quot;, &quot;ō&quot;, &quot;ū&quot;, &quot;u&quot;&quot;_&quot;)<br />
 aRayCount = 0<br />
 FandR = oDoc.createReplaceDescriptor<br />
 FandR.SearchCaseSensitive = true<br />
@@ -100,7 +100,7 @@ FandR.setReplaceString(aReplace(aRayCount))<br />
 aRayCount = aRayCount + 1<br />
 oDoc.ReplaceAll(FandR)<br />
 Wend<br />
-End Sub<br />
+End Sub
 </blockquote>
 
 </body>

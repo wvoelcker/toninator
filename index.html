@@ -17,6 +17,17 @@
 
 onload = function() {
 
+	var macro = document.getElementById("macro");
+	document.getElementById("togglemacro").onclick = function() {
+		if (macro.style.display == "block") {
+			macro.style.display = "none";
+			this.innerHTML = "Show the macro";
+		} else {
+			macro.style.display = "block";
+			this.innerHTML = "Hide the macro";
+		}
+	}
+
 	var replacements = {
 		"u\"":"ü",
 		"a\/":"á",
@@ -83,7 +94,7 @@ onload = function() {
 
 <p>by <a href="http://willv.net">Will Voelcker</a></p>
 
-<p>Also available as a macro for Openoffice and Libreoffice.  <a href="javascript:void(0)" onclick="document.getElementById('macro').style.display = 'block'">See the macro.</a></p>
+<p>Also available as a macro for Openoffice and Libreoffice.  <a id="togglemacro">See the macro.</a></p>
 
 <blockquote id='macro'>
 Sub PinyinToneMarks<br />

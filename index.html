@@ -64,7 +64,7 @@ onload = function() {
 
 	inputarea.onkeyup = function() {
 
-		outputarea.value = inputarea.value.replace(/[aeiou]"?(\\\/|[\\\/_])?/g, function(match) {
+		outputarea.value = inputarea.value.replace(/c,/g, "ç").replace(/[aeiou]"?(\\\/|[\\\/_])?/g, function(match) {
 			if (typeof replacements[match] == "undefined") {
 				return match;
 			}

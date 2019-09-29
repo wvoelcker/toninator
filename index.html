@@ -56,7 +56,11 @@ onload = function() {
 		"o_":"ō",
 		"u_":"ū",
 		"u\"_":"ǖ",
-		"c,": "ç"
+		"c,": "ç",
+		"e^": "ê",
+		"a~": "ã",
+		"o~": "õ",
+		"n~": "ñ"
 	}
 
 	var inputarea = document.getElementById("inputarea");
@@ -64,7 +68,7 @@ onload = function() {
 
 	inputarea.onkeyup = function() {
 
-		outputarea.value = inputarea.value.replace(/c,/g, "ç").replace(/[aeiou]"?(\\\/|[\\\/_])?/g, function(match) {
+		outputarea.value = inputarea.value.replace(/[aeiounc]"?(\\\/|[\\\/_]|[~^,])?/g, function(match) {
 			if (typeof replacements[match] == "undefined") {
 				return match;
 			}
@@ -87,7 +91,7 @@ onload = function() {
 
 <p>For example, a/ will produce á.  You can also use u&quot; to generate ü and add any of the above suffixes to add tone marks to ü.</p>
 
-<p>Finally, the symbol ç can be produced via c followed by a comma, i.e. 'c,'.</p>
+<p>Finally, the following replacements can also be made: ç ('c,'), ã,õ,ñ (a~,o~,n~), ê(e^).</p>
 
 <p>Type in the left hand box; rendered text appears in the right-hand one</p>
 
